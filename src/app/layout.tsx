@@ -36,6 +36,7 @@ function SideMenu() {
               Galery
             </Button>
             </Link>
+            <Link href={'/albums'}>
             <Button variant="ghost" className="w-full justify-start flex gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +54,7 @@ function SideMenu() {
               </svg>
               Albums
             </Button>
+            </Link>
             <Link href='/favorites'>
             <Button  variant="ghost" className="w-full justify-start flex gap-2">
               <svg
