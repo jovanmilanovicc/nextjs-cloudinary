@@ -6,11 +6,12 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { MobileMenu } from "@/components/mobile-menu";
 
 const inter = Inter({ subsets: ["latin"] });
 function SideMenu() {
   return (
-    <div className="pb-12 w-1/4">
+    <div className="pb-12 w-1/4 hidden md:block">
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
           <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
@@ -95,9 +96,10 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.className}>
         <div className="border-b">
-          <div className="flex h-16 items-center px-4 container mx-auto">
-            Photos app
-            <div className="ml-auto flex items-center space-x-4">
+          <div className="flex h-16 items-center justify-between px-4 container">
+            <div className="md:hidden"><MobileMenu /></div>
+            <p>Photos app</p>
+            <div className=" flex items-center space-x-4">
               <Avatar>
                 <AvatarImage
                   src="https://github.com/shadcn.png"
