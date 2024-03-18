@@ -49,59 +49,28 @@ export default function EditPage({
           </Button>
         </div>
 
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <CldImage src={publicId} width="400" height="300" alt="some image" />
 
-          {transformation === "generative-fill" && (
-            <CldImage
-              src={publicId}
-              width="1200"
-              height="1400"
-              alt="some image"
-              crop="pad"
-              fillBackground
-            />
-          )}
-
-          {transformation === "blur" && (
-            <CldImage
-              src={publicId}
-              width="1200"
-              height="1400"
-              blur="800"
-              alt="some image"
-            />
-          )}
-
-          {transformation === "grayscale" && (
-            <CldImage
-              src={publicId}
-              width="1200"
-              height="1400"
-              grayscale
-              alt="some image"
-            />
-          )}
-
-          {transformation === "pixelate" && (
-            <CldImage
-              src={publicId}
-              width="1200"
-              height="1400"
-              pixelate
-              alt="some image"
-            />
-          )}
-
-          {transformation === "bg-remove" && (
-            <CldImage
-              src={publicId}
-              width="1200"
-              height="1400"
-              removeBackground
-              alt="some image"
-            />
-          )}
+          <CldImage
+            src={publicId}
+            width="1200"
+            height="1400"
+            transformations={
+              transformation === "grayscale"
+                ? ["grayscale"]
+                : transformation === "pixelate"
+                ? ["pixelate"]
+                : transformation === "bg-remove"
+                ? ["removebg"]
+                : transformation === "blur"
+                ? ["blur"]
+                : transformation === "generative-fill"
+                ? ["e_generative:fill"]
+                : undefined
+            }
+            alt="some image"
+          />
         </div>
       </div>
     </section>
