@@ -82,14 +82,7 @@ function SideMenu() {
   );
 }
 
-import cloudinary from 'cloudinary';
 
-// Initialize Cloudinary
-cloudinary.v2.config({
-    cloud_name: 'dfygvgacp',
-    api_key: '277926471253861',
-    api_secret: '2FFalV1ag1GKnDKmXVf3Jtqcgkg'
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
