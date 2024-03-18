@@ -2,11 +2,10 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 import { MobileMenu } from "@/components/mobile-menu";
+import cloudinary from "cloudinary";
 
 const inter = Inter({ subsets: ["latin"] });
 function SideMenu() {
@@ -15,7 +14,7 @@ function SideMenu() {
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
           <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-            Manage
+            Manage  
           </h2>
           <div className="space-y-1">
             <Link href={'/gallery'}>
@@ -83,6 +82,12 @@ function SideMenu() {
 }
 
 
+
+cloudinary.v2.config({
+  cloud_name: "dfygvgacp",
+  api_key: "277926471253861",
+  api_secret: "2FFalV1ag1GKnDKmXVf3Jtqcgkg",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
