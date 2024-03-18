@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SearchResult } from "../gallery/page";
+import { SearchResult } from "../app/gallery/page";
 import { ImageGrid } from "@/components/image-grid";
-import CloudinaryImage from "../gallery/cloudinary-image";
+import CloudinaryImage from "./cloudinary-image";
 
 export default function FavoritesList({
   initialResources,
